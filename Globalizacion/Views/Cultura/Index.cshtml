@@ -1,0 +1,76 @@
+﻿@using System.Threading
+@using Globalizacion.Models
+@model Cliente
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Resources.Cultura.Home</h2>
+<hr />
+<div class="jumbotron">
+    <h3><b>@Resources.Cultura.Pais</b></h3>
+    <img src="~/Images/@Resources.Cultura.Bandera" style="height:150px;width:auto;border:2px solid black;border-radius:25px;" />
+    <br />
+    <p class="text-info">@Resources.Cultura.Idioma</p>
+</div>
+
+@if (Model != null)
+{
+    <hgroup>
+        <h3 style="color:green">@ViewBag.Agradecimiento</h3>
+        <h4 style="color:green">@ViewBag.Donacion</h4>
+    </hgroup>
+}
+
+<form method="post">
+    <div class="form-row">
+        <fieldset>
+            <legend>@Resources.Cultura.DatosPersonales</legend>
+            <div class="form-group col-md-4">
+                <label for="nombre">@Resources.Cultura.Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder="@Resources.Cultura.Nombre" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="apellido">@Resources.Cultura.Apellido</label>
+                <input type="text" class="form-control" name="apellido" placeholder="@Resources.Cultura.Apellido" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">@Resources.Cultura.Email</label>
+                <input type="email" class="form-control" name="email" placeholder="@Resources.Cultura.Email" required>
+            </div>
+        </fieldset>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <fieldset>
+                <legend>@Resources.Cultura.Direccion</legend>
+                <div class="form-group col-md-12">
+                    <label for="inputAddress">@Resources.Cultura.Direccion</label>
+                    <input type="text" class="form-control col-md-12" name="direccion" placeholder="@Resources.Cultura.Direccion" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="codigopostal">@Resources.Cultura.CP</label>
+                    <input type="number" class="form-control col-md-12" name="codigopostal" placeholder="@Resources.Cultura.CP" required>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group col-md-12">
+                <fieldset>
+                    <legend>@Resources.Cultura.Contribucion</legend>
+                    <div class="form-group col-md-12">
+                        <label for="contribucion">@Resources.Cultura.Cantidad</label>
+                        <input type="number" class="form-control col-md-12" name="contribucion" placeholder="@Resources.Cultura.Moneda" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="comentario">@Resources.Cultura.Comentario</label>
+                        <textarea placeholder="@Resources.Cultura.Comentario" name="comentario" class="form-control" rows="2"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <button type="submit" name="cultura" value="@Thread.CurrentThread.CurrentUICulture.ToString()" class="btn btn-primary">@Resources.Cultura.Boton</button>
+</form>
+<hr />
+<h3>@ViewBag.Fecha</h3>

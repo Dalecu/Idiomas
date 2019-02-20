@@ -1,0 +1,48 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a.link-es {
+    display:inline-block;
+    height: 35px !important;
+    width: 35px !important;
+    margin-top:7px;
+    background-image: url('../Images/spain-flag.png') !important;
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+}
+
+a.link-jp {
+    display: inline-block;
+    height: 35px !important;
+    width: 35px !important;
+    margin-top: 7px;
+    background-image: url('../Images/japan-flag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a.link-us {
+    display: inline-block;
+    height: 35px !important;
+    width: 35px !important;
+    margin-top: 7px;
+    background-image: url('../Images/usa-flag.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
